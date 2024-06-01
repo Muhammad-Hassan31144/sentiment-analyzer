@@ -4,15 +4,7 @@ This application uses a pre-trained BERT model for sentiment analysis. The model
 
 ## Project Structure
 
-- **api/**: Contains the backend serverless function written in Python.
-  - `sentimentAnalyzer.py`: The main file containing the handler function for the serverless function.
-- **frontend/**: Contains the static files for the frontend.
-  - `index.html`: The main HTML file for the frontend.
-  - `static/`: Contains JavaScript files.
-    - `mywebscript.js`: The JavaScript file containing the code for running the sentiment analysis.
-  - `styles/`: Contains CSS files.
-    - `main.css`: Your main CSS file for styling.
-- **vercel.json**: Configuration file for Vercel to define builds and routes.
+- **app.py**: The main file containing the Streamlit application code.
 - **requirements.txt**: Lists the Python dependencies for your project.
 
 ## Purpose
@@ -21,29 +13,26 @@ The purpose of this application is to provide a simple interface for users to in
 
 ## How to Deploy
 
-### Frontend Deployment on Vercel
+### Deployment on Streamlit Cloud
 
-1. **Install Vercel CLI**:
-    ```bash
-    npm install -g vercel
+1. **Push your code to a GitHub repository**:
+    Ensure your repository structure is similar to the following:
+
+    ```
+    sentiment-analysis-app/
+    ├── app.py
+    ├── requirements.txt
+    └── README.md
     ```
 
-2. **Login to Vercel**:
-    ```bash
-    vercel login
-    ```
+2. **Go to [Streamlit Cloud](https://share.streamlit.io/)** and sign in with your GitHub account.
 
-3. **Deploy**:
-    ```bash
-    vercel
-    ```
+3. **Click on “New app”**.
 
-Follow the prompts to deploy your project. Vercel will automatically detect your configuration and deploy both the frontend and backend.
+4. **Select your repository** and specify the branch (usually `main` or `master`).
 
-## Model Information
+5. **Enter the file path** to your `app.py` file (e.g., `app.py`).
 
-This application uses the `distilbert-base-uncased-finetuned-sst-2-english` model from Hugging Face for sentiment analysis. This model is a distilled version of BERT, fine-tuned on the Stanford Sentiment Treebank (SST-2) dataset.
+6. **Click “Deploy”**.
 
-## License
-
-This project is licensed under the MIT License.
+Streamlit Cloud will then build and deploy your app. Once it’s ready, you will be provided with a URL where you can access your live sentiment analysis app.
